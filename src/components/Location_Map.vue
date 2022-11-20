@@ -116,7 +116,7 @@
                     this.allSearchedMaps=stateData.slice(0,11)
                 }
                 else{
-                    console.log('nodlu amk')
+                    console.log('not found stateData')
                 }
             },
             cleanMapCache(){
