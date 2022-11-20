@@ -63,7 +63,16 @@
                             </table>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-dark text-light btn-lg btn-block" data-dismiss="modal">Close</button>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <button type="button" @click="cleanMapCache()" class="btn btn-danger text-light btn-block">Clear History</button>
+                            </div>
+                            <div class="col">
+                                <button type="button" class="btn btn-dark text-light btn-block" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 </div>
             </div>
@@ -106,6 +115,15 @@
                 else if(stateData.length>10){
                     this.allSearchedMaps=stateData.slice(0,11)
                 }
+                else{
+                    console.log('nodlu amk')
+                }
+            },
+            cleanMapCache(){
+                // this.$store.state.allSearchedMaps = null
+                console.log('Succsersefully clean cache ')
+                this.$store.dispatch('cleanLocation')
+                this.allSearchedMaps = null
             }
         },
         created(){//!work when open components

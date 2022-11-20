@@ -28,12 +28,19 @@ export const store = new Vuex.Store({
             state.allSearchedMaps.forEach((item)=>{
                 console.log('item value in state ', item.lat)
             })
+        },
+        cleanSearchResult(state){
+            console.log('Search result working ', state)
+            state.allSearchedMaps = []
         }
     },
     actions:{
         updateLocation({commit},payload){
             console.log('value payload??? ' ,payload)
             commit('renderSearchResults',payload)
+        },
+        cleanLocation({commit}){
+            commit('cleanSearchResult')
         }
     }
 })
